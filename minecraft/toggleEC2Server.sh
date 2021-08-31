@@ -19,7 +19,7 @@ else
 
     echo "Called to run EC2 instance, will be sleeping for 5 seconds to obtain IP address"
     
-    sleep 5
+    sleep 10
 
     NEW_IP_LINE=$(aws ec2 describe-instances --instance-id i-0b10017a625ca6a8d --output text | grep ASSOCIATION)
     IP_ADDRESS=$(echo "${NEW_IP_LINE}" | tr -s " " | cut -d " " -f4)
